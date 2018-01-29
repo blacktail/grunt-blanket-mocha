@@ -37,3 +37,9 @@ exports.reduceStats = function(stats) {
 exports.formatMs = function(ms) {
   return (Math.ceil(ms * 100) / 100000).toFixed(2);
 };
+
+/*
+* Overriding XUnit reporter from mochajs.
+*/
+var reporters = require('mocha').reporters;
+reporters['XUnit'] = require('./xunit');
